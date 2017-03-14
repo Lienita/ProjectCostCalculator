@@ -7,7 +7,7 @@ public class FlatMarkup implements Markup {
 	}
 
 	public double getPercent() {
-		return 0.05;
+		return 1.05;
 	}
 
 }

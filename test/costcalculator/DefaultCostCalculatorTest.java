@@ -10,9 +10,9 @@ public class DefaultCostCalculatorTest {
 	public void testCostCalculatorWithFoodMarkup(){
 		DefaultCostCalculator costCalculator = new DefaultCostCalculator();
 		
-		double returnedValue = costCalculator.getProjectCost(55, 3, "food");
+		double returnedValue = costCalculator.getProjectCost(1299.99, 3, "food");
 		
-		Assert.assertEquals(45.0, returnedValue, 0); 
+		Assert.assertEquals(1591.58, returnedValue, 0); 
 	}
 
 	@Test (expected = CostCalulatorException.class)
