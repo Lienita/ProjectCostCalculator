@@ -8,12 +8,12 @@ public class DefaultCostCalculator implements CostCalculator {
 		double flatMarkup, personMarkup, materialTypeMarkup, finalCost;
 		Markup flat = new FlatMarkup();
 		Markup person = new PersonMarkup();
-		Markup materialType = new MarkupBuilder().buildMarkup(markup);
-        
-		
+
 		if(markup == null) {
-			throw new CostCalulatorException("Markup is required");
+			throw new CostCalculatorException("Markup is required");
 		}
+		
+		Markup materialType = new MarkupBuilder().buildMarkup(markup);
 		
 		if (basePrice < 0 || peopleCount < 0) {
             throw new IllegalArgumentException("The base price and number of people should not be less than 0");

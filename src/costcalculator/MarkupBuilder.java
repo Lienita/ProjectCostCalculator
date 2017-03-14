@@ -7,6 +7,7 @@ import java.util.List;
 public class MarkupBuilder {
 
 	Markup buildMarkup(String label) {
+	
 		
     	List<String> pharmaceuticalProducts = Arrays.asList("drugs", "medicines", "medications", "antipyretics", "analgesics",
                 "antibiotics", "antiseptics", "tranquilizers", "anesthetics", "antivirals", "anti-fungals", "anti-inflammatory",
@@ -19,7 +20,7 @@ public class MarkupBuilder {
                 "pda", "calculator", "vcr", "dvd", "blue-ray", "clocks", "audio device", "headphone", "tablet", "smartphone", "e-reader",
                 "e-book", "display device", "media receiver", "media player", "music player", "ipod", "mp3 player", "audio equipment",
                 "music system", "karaoke", "telephone", "cell phone", "camcorders", "calculator", "laptop", "computer", "usb drive",
-                "memory stick", "printer", "shredder", "remote control", "remote control car", "video game", "gaming system ",
+                "memory stick", "printer", "shredder", "remote control", "remote control car", "video games", "gaming system",
                 "nintendo", "playstation", "gps", "automotive electronic ,car stereo", "electronic musical instrument",
                 "virtual reality head-mounted display goggle", "wearable technology", "fitbit ", "digital exercise watch",
                 "digital watch", "parabolic antenna", "electronic toy", "white good", "washing machine", "drying machine ",
@@ -28,7 +29,7 @@ public class MarkupBuilder {
     	
     	for (String pharmaList : pharmaceuticalProducts) {
             if (pharmaList.toLowerCase().contains(label.trim().toLowerCase())){
-            	return new FoodMarkup();            	
+            	return new PharmaceuticalsMarkup();            	
             }
         }
         for (String foodList : foodProducts) {

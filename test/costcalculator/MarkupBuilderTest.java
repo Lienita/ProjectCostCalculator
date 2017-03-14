@@ -12,7 +12,15 @@ public class MarkupBuilderTest {
 		Markup foodMarkup = builder.buildMarkup("food");
 		
 		
-		//Assert.assertTrue(foodMarkup instanceof FoodMarkup);
+		Assert.assertEquals(FoodMarkup.class, foodMarkup.getClass());
+	}
+	
+	@Test
+	public void testBuildForSpecificFoodCase(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup foodMarkup = builder.buildMarkup("bread");
+		
+		
 		Assert.assertEquals(FoodMarkup.class, foodMarkup.getClass());
 	}
 
@@ -20,9 +28,51 @@ public class MarkupBuilderTest {
 	public void testBuildForWrongCase(){
 		MarkupBuilder builder = new MarkupBuilder();
 		Markup foodMarkup = builder.buildMarkup("othercase");
-		
-		
-		//Assert.assertTrue(foodMarkup instanceof FoodMarkup);
+				
 		Assert.assertEquals(EmptyMarkup.class, foodMarkup.getClass());
+	}
+
+	@Test
+	public void testBuildForPharmaceuticalCase1(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup pharmaceuticalsMarkup = builder.buildMarkup("antibiotic");
+		
+		
+		Assert.assertEquals(PharmaceuticalsMarkup.class, pharmaceuticalsMarkup.getClass());
+	}
+	
+	@Test
+	public void testBuildForPharmaceuticalCase2(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup pharmaceuticalsMarkup = builder.buildMarkup("medicine");
+		
+		
+		Assert.assertEquals(PharmaceuticalsMarkup.class, pharmaceuticalsMarkup.getClass());
+	}
+	
+	@Test
+	public void testBuildForElectronicCase1(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup electronicsMarkup = builder.buildMarkup("dvd");
+		
+		
+		Assert.assertEquals(ElectronicsMarkup.class, electronicsMarkup.getClass());
+	}
+	
+	@Test
+	public void testBuildForElectronicCase2(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup electronicsMarkup = builder.buildMarkup("video game");
+		
+		
+		Assert.assertEquals(ElectronicsMarkup.class, electronicsMarkup.getClass());
+	}
+	
+	@Test
+	public void testBuildForEverythingElseCase(){
+		MarkupBuilder builder = new MarkupBuilder();
+		Markup emptyMarkup = builder.buildMarkup("books");
+				
+		Assert.assertEquals(EmptyMarkup.class, emptyMarkup.getClass());
 	}
 }

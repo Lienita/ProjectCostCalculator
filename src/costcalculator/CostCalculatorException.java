@@ -1,13 +1,13 @@
 package costcalculator;
 
-public class CostCalulatorException extends RuntimeException{
+public class CostCalculatorException extends RuntimeException{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected CostCalulatorException(String message) {
+	protected CostCalculatorException(String message) {
 		super(message);
 	}
 
