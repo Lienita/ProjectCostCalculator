@@ -4,11 +4,30 @@ import java.util.Arrays;
 import java.util.List;
 
 
+/**
+ * <h1>MarkupBuilder</h1>
+ * <p>
+ * MarkupBuilder is an instantiable class that defines a markup category. The MarkupBuilder Class has the following method(s):
+ * <p>
+ * Markup buildMarkup(String label)
+ * <p> 
+ */
 public class MarkupBuilder {
 
-	Markup buildMarkup(String label) {
-	
+	/**
+	 * <h1>buildMarkup</h1>
+	 * <p>
+	 * Markup buildMarkup(String label)
+	 * <p>
+	 * Defines the markup category.
+	 * @param label - a String value that represents the product type to be categorized.
+	 * @return A Markup data type.
+	 * <p> 
+	 */
+	Markup buildMarkup(String label) {	
 		
+		// Variable declaration
+		// This Lists of products is an assumption of NuPack's definition list of products per category
     	List<String> pharmaceuticalProducts = Arrays.asList("drugs", "medicines", "medications", "antipyretics", "analgesics",
                 "antibiotics", "antiseptics", "tranquilizers", "anesthetics", "antivirals", "anti-fungals", "anti-inflammatory",
                 "anti-allergy", "decongestants", "vaccines", "electrolytes", "contraceptives", "anticoagulanst", "antibacterials");
@@ -26,23 +45,28 @@ public class MarkupBuilder {
                 "digital watch", "parabolic antenna", "electronic toy", "white good", "washing machine", "drying machine ",
                 "dishwasher", "microwave", "refrigerator", " smart home device", "domestic robot", "garage door opener", "vacuum cleaner");
 
-    	
+    	// Checks if the String label is contained in the pharmaceuticalProducts List
     	for (String pharmaList : pharmaceuticalProducts) {
             if (pharmaList.toLowerCase().contains(label.trim().toLowerCase())){
+            	// if found returns a Pharmaceutical Markup 
             	return new PharmaceuticalsMarkup();            	
             }
         }
+    	// Checks if the String label is contained in the foodProducts List
         for (String foodList : foodProducts) {
             if (foodList.toLowerCase().contains(label.trim().toLowerCase())){
+            	// if found returns a Food Markup
             	return new FoodMarkup();
             }
         }
+    	// Checks if the String label is contained in the electronicProducts List
         for (String elctronicList : electronicProducts) {
             if (elctronicList.toLowerCase().contains(label.trim().toLowerCase())){
+            	// if found returns an Electronic Markup
             	return new ElectronicsMarkup();
             }
         }
-        //if (type == null)
+        // if NOT found returns an Empty Markup
         return new EmptyMarkup();
 	
 	}
