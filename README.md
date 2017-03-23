@@ -34,6 +34,10 @@ public class TheClient {
      }
 }
  ```
+ Then on the command line:
+
+ javac TheClient.java
+ java -cp costcalculator.jar:. TheClient
 
 ## Project Code Example
   
@@ -165,6 +169,12 @@ Each of the tests can be run from within Eclipse by right-clicking on each metho
 To run the Test from the command line, the JAR file has to be created and the junit.jar copied to the same path, then:
 
 java -cp ProjectCostCalculator.jar;junit.jar org.junit.runner.JUnitCore [test class name]
+
+## Runtime Versions
+
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 
 
 
